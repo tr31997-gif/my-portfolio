@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="เว็บไซต์ E-Portfolio รวบรวมประวัติ ทักษะ และผลงานของนักเรียน">
+  <title>My Portfolio | Student</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #080d18;
+      --card: #111c30;
+      --blue: #38bdf8;
+      --white: #f1f5f9;
+      --gray: #94a3b8;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,13,24,.95);
+      border-bottom: 1px solid #26364d;
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      color: var(--blue);
+    }
+
+    .menu {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .menu a:hover {
+      color: var(--blue);
+    }
+
+    section {
+      padding: 85px 10%;
+      scroll-margin-top: 60px;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 55px);
+      line-height: 1.3;
+      margin: 15px 0;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero p, .description {
+      color: var(--gray);
+    }
+
+    .profile {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--blue);
+      background: var(--card);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 11px 25px;
+      background: var(--blue);
+      color: #08111f;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      opacity: .8;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: var(--blue);
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #26364d;
+      border-radius: 14px;
+      padding: 23px;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--blue);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--blue);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 9px;
+      margin-bottom: 15px;
+      background: #26364d;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #19334b;
+      color: var(--blue);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #26364d;
+      color: var(--gray);
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 17px;
+      border: none;
+      border-radius: 50%;
+      background: var(--blue);
+      cursor: pointer;
+      display: none;
+      font-size: 20px;
+    }
+
+    @media(max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .menu {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 13px;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 55px;
+      }
+
+      .profile {
+        width: 180px;
+        height: 180px;
+      }
+
+      section {
+        padding: 65px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">MY PORTFOLIO</div>
+
+    <ul class="menu">
+      <li><a href="#home">หน้าหลัก</a></li>
+      <li><a href="#about">เกี่ยวกับ</a></li>
+      <li><a href="#education">การศึกษา</a></li>
+      <li><a href="#skills">ทักษะ</a></li>
+      <li><a href="#projects">ผลงาน</a></li>
+      <li><a href="#contact">ติดต่อ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section class="hero" id="home">
+    <div>
+      <p>WELCOME TO MY PORTFOLIO</p>
+      <h1>สวัสดีครับ<br>
+        ผมคือ <span>ปัณณวัตน์ ราชเจริญ</span>
+      </h1>
+      <p>
+        นักเรียนที่มีความสนใจด้านเทคโนโลยี
+        การเขียนโปรแกรม และนวัตกรรม
+      </p>
+      <a href="#projects" class="btn">ดูผลงานของผม</a>
+    </div>
+
+    <img src="images/profile.jpg"
+         alt="รูปโปรไฟล์"
+         class="profile">
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">ABOUT ME</h2>
+    <div class="card">
+      <p>
+        ผมเป็นนักเรียนระดับชั้นมัธยมศึกษาปีที่ 6
+        มีความสนใจเกี่ยวกับเทคโนโลยี
+        การเขียนโปรแกรม และการสร้างนวัตกรรม
+      </p>
+      <p>
+        ผมชอบเรียนรู้สิ่งใหม่ ๆ และนำความรู้
+        มาประยุกต์ใช้ในการสร้างผลงานจริง
+        เพื่อพัฒนาทักษะและประสบการณ์ของตนเอง
+      </p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2 class="section-title">EDUCATION</h2>
+    <div class="card">
+      <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+      <p>โรงเรียนธัญรัตน์</p>
+      <p class="description">
+        ชั้นมัธยมศึกษาปีที่ 6
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">MY SKILLS</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>HTML / CSS</h3>
+        <p>สร้างและออกแบบเว็บไซต์</p>
+        <span class="tag">Web Development</span>
+      </div>
+
+      <div class="card">
+        <h3>Arduino / ESP32</h3>
+        <p>เขียนโปรแกรมควบคุมอุปกรณ์อิเล็กทรอนิกส์</p>
+        <span class="tag">Programming</span>
+      </div>
+
+      <div class="card">
+        <h3>Robotics</h3>
+        <p>ออกแบบและพัฒนาหุ่นยนต์</p>
+        <span class="tag">Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2 class="section-title">MY PROJECTS</h2>
+
+    <div class="card-container">
+
+      <div class="card">
+        <img src="images/project1.jpg"
+             alt="ผลงานแขนกล"
+             class="project-img">
+
+        <h3>The Clamp</h3>
+        <p>
+          โครงงานแขนกลหุ่นยนต์ 2 แกน
+          ใช้เซอร์โวมอเตอร์และ ESP32
+          สำหรับควบคุมการเคลื่อนที่
+        </p>
+        <span class="tag">Robotics</span>
+      </div>
+
+      <div class="card">
+        <img src="images/project2.jpg"
+             alt="ผลงานรถหุ่นยนต์"
+             class="project-img">
+
+        <h3>ESP32 Robot Car</h3>
+        <p>
+          รถหุ่นยนต์ 4 ล้อที่สามารถควบคุม
+          การเคลื่อนที่ผ่านระบบไร้สาย
+        </p>
+        <span class="tag">IoT / ESP32</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">CONTACT ME</h2>
+    <p>ขอบคุณที่เข้าชมเว็บไซต์ E-Portfolio ของผม</p>
+    <p class="description">
+      สามารถติดตามผลงานและโครงการเพิ่มเติมได้
+    </p>
+    <a href="https://github.com/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn">
+       My GitHub
+    </a>
+  </section>
+
+  <footer>
+    <p>© 2026 My E-Portfolio</p>
+    <p>Created by Student</p>
+  </footer>
+
+  <button id="topBtn" aria-label="กลับขึ้นด้านบน">↑</button>
+
+  <script>
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", function() {
+      if (window.scrollY > 300) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    });
+
+    topBtn.addEventListener("click", function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+</body>
+</html>
